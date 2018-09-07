@@ -1,5 +1,5 @@
 """Math functions for calculator."""
-
+from functools import reduce
 
 def add(numbers):
     """Return the sum of the two inputs."""
@@ -9,10 +9,12 @@ def add(numbers):
 
 def subtract(numbers):
     """Return the second number subtracted from the first."""
-    total = 0
-    for n in numbers[1:]:
-        total += n
-    return(numbers[0] - total)
+    # total = 0
+    # for n in numbers[1:]:
+    #     total += n
+    # return(numbers[0] - total)
+    subtracted = reduce(lambda a,b: a-b, numbers)
+    return subtracted
 
 
 def multiply(num1, num2):
